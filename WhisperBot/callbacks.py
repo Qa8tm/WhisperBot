@@ -50,8 +50,8 @@ async def _callbacks(bot, callback_query: CallbackQuery):
 			if q:
 				await callback_query.answer(q.message, show_alert=True)
 			else:
-				await callback_query.answer("Message Not Found", show_alert=True)
+				await callback_query.answer("الهمسه ماهيه نحذفت", show_alert=True)
 			SESSION.commit()
 		else:
-			await callback_query.answer("Sorry, you cannot see this whisper as it is not meant for you!", show_alert=True)
+			await callback_query.answer("شجاي تدور الهمسه مو الك !", show_alert=True)
 		await check_for_users(data_list)
