@@ -18,7 +18,7 @@ from WhisperBot.bot_users import check_for_users
 main = [
     InlineQueryResultArticle(
         title="بوت همسة",
-        input_message_content=InputTextMessageContent("اكتب يوزر الشخص اخر شي بد الهمسه"),
+        input_message_content=InputTextMessageContent("اكتب يوزر الشخص اخر شي بلـالهمسه"),
         url="https://t.me/ADWSL",
         description="اكتب يوزر الشخص اخر شي بد الهمسه",
         thumb_url="https://telegra.ph/simo-userbot-05-01",
@@ -73,7 +73,7 @@ async def previous_target(sender):
         except KeyError:
             name = first_name
         text1 = f"تم ارسال همسة الى {name}"
-        text2 = "فقط {name} يمكنه قراءتها"
+        text2 = f"فقط {name} يمكنه قراءتها"
         mention = f"[{name}](tg://user?id={receiver})"
         results = [
               InlineQueryResultArticle(
@@ -145,12 +145,12 @@ async def answer(bot: Client, query):
             else:
                 name = target_user.first_name
             text1 = f"هذه الهمسه الى  {name}"
-            text2 = "فقط {name} يمكنه قراءتها"
+            text2 = f"فقط {name} يمكنه قراءتها"
             await query.answer(
                 results=[
                     InlineQueryResultArticle(
                         title=text1,
-                        input_message_content=InputTextMessageContent(f"تك كتابه همسة الى {target_user.mention}" + " " + text2),
+                        input_message_content=InputTextMessageContent(f"تم كتابه همسة الى {target_user.mention}" + " " + text2),
                         url="https://t.me/ADWSL",
                         description=text2,
                         thumb_url="https://telegra.ph/simo-userbot-05-01",
