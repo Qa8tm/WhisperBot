@@ -17,16 +17,15 @@ from WhisperBot.bot_users import check_for_users
 
 main = [
     InlineQueryResultArticle(
-        title="Whisper Bot",
-        input_message_content=InputTextMessageContent("Write Target User's @username or id at the end of your message."),
-        url="https://t.me/StarkBots",
-        description="Write Target User's @username or id at the end of your message.",
-        thumb_url="https://telegra.ph/file/33af12f457b16532e1383.jpg",
+        title="بوت همسة",
+        input_message_content=InputTextMessageContent("اكتب يوزر الشخص اخر شي بد الهمسه"),
+        url="https://t.me/ADWSL",
+        description="اكتب يوزر الشخص اخر شي بد الهمسه",
+        thumb_url="https://telegra.ph/simo-userbot-05-01",
         reply_markup=InlineKeyboardMarkup(
             [
-                [InlineKeyboardButton("Learn More", url="https://t.me/WhisperStarkBot?start=start")],
-                [InlineKeyboardButton("🔒 Send a Whisper 🔒", switch_inline_query="")],
-                [InlineKeyboardButton("♥ More Amazing bots ♥", url="https://t.me/StarkBots")]
+                [InlineKeyboardButton("معلومات اكثر", url="https://t.me/azkarkbot?start=start")],
+                [InlineKeyboardButton("🔒 ارسل همسة 🔒", switch_inline_query="")]
             ]
         ),
     )
@@ -73,22 +72,22 @@ async def previous_target(sender):
             name = first_name + last_name
         except KeyError:
             name = first_name
-        text1 = f"A whisper message to {name}"
-        text2 = "Only he/she can open it."
+        text1 = f"تم ارسال همسة الى {name}"
+        text2 = "فقط {name} يمكنه قراءتها"
         mention = f"[{name}](tg://user?id={receiver})"
         results = [
               InlineQueryResultArticle(
                   title=text1,
                   input_message_content=InputTextMessageContent(
-                      f"A whisper message to {mention}" + " " + text2),
-                  url="https://t.me/StarkBots",
+                      f"تم ارسال همسة الى {mention}" + " " + text2),
+                  url="https://t.me/ADWSL",
                   description=text2,
-                  thumb_url="https://telegra.ph/file/33af12f457b16532e1383.jpg",
+                  thumb_url="https://telegra.ph/simo-userbot-05-01",
                   reply_markup=InlineKeyboardMarkup(
                       [
                           [
                               InlineKeyboardButton(
-                                  "🔐 Show Message 🔐",
+                                  "🔐 رؤيه الهمسة 🔐",
                                   callback_data=str(data_list),
                               )
                           ]
@@ -110,7 +109,7 @@ async def answer(bot: Client, query):
     if query.query == "":
         await query.answer(
             results=main,
-            switch_pm_text="🔒 Learn How to send Whispers",
+            switch_pm_text="🔒 تعلم كيف تكتب همسة",
             switch_pm_parameter="start"
         )
     elif len(query_list) == 1:
@@ -118,7 +117,7 @@ async def answer(bot: Client, query):
         results = await previous_target(sender)
         await query.answer(
             results,
-            switch_pm_text="🔒 Learn How to send Whispers",
+            switch_pm_text="🔒 تعلم كيف تكتب همسة",
             switch_pm_parameter="start"
         )
     elif len(query_list) >= 2:
@@ -132,7 +131,7 @@ async def answer(bot: Client, query):
             results = await previous_target(sender)
             await query.answer(
                 results,
-                switch_pm_text="🔒 Learn How to send Whispers",
+                switch_pm_text="🔒 تعلم كيف تكتب همسة",
                 switch_pm_parameter="start"
             )
             return
@@ -145,21 +144,21 @@ async def answer(bot: Client, query):
                 name = target_user.first_name + target_user.last_name
             else:
                 name = target_user.first_name
-            text1 = f"A whisper message to {name}"
-            text2 = "Only he/she can open it."
+            text1 = f"هذه الهمسه الى  {name}"
+            text2 = "فقط {name} يمكنه قراءتها"
             await query.answer(
                 results=[
                     InlineQueryResultArticle(
                         title=text1,
-                        input_message_content=InputTextMessageContent(f"A whisper message to {target_user.mention}" + " " + text2),
-                        url="https://t.me/StarkBots",
+                        input_message_content=InputTextMessageContent(f"تك كتابه همسة الى {target_user.mention}" + " " + text2),
+                        url="https://t.me/ADWSL",
                         description=text2,
-                        thumb_url="https://telegra.ph/file/33af12f457b16532e1383.jpg",
+                        thumb_url="https://telegra.ph/simo-userbot-05-01",
                         reply_markup=InlineKeyboardMarkup(
                             [
                                 [
                                     InlineKeyboardButton(
-                                        "🔐 Show Message 🔐",
+                                        "🔐 رؤيه الهمسة 🔐",
                                         callback_data=str(data_list),
                                     )
                                 ]
@@ -167,7 +166,7 @@ async def answer(bot: Client, query):
                         ),
                     )
                 ],
-                switch_pm_text="🔒 Learn How to send Whispers",
+                switch_pm_text="🔒 تعلم كيف تكتب همسة",
                 switch_pm_parameter="start"
             )
             await check_for_users(receiver)
@@ -176,7 +175,7 @@ async def answer(bot: Client, query):
             results = await previous_target(sender)
             await query.answer(
                 results,
-                switch_pm_text="🔒 Learn How to send Whispers",
+                switch_pm_text="🔒 تعلم كيف تكتب همسة",
                 switch_pm_parameter="start"
             )
     await check_for_users(sender)
