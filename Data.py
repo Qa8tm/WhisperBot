@@ -4,57 +4,54 @@ from pyrogram.types import InlineKeyboardButton
 class Data:
     # Start Message
     START = """
-Hey {}.
-Welcome to {}
+اهلا {}.
+مرحبا بك في {}
 
-I am the Master of Whisperers (like Varys in Game of Thrones).
+انا بوت همسه 
 
-You can use me to send whispers to your friend in groups and channels (even if I'm not there).
-Only that friend and you will be able to read the message even though others are in same group. 
+يمكنك ارسال همسة لأي شخص في القنوات والكروبات (حتى وان لم اكن في القناة).
+فقط الشخص الذي تم ارسال اليه الهمسه يمكنه رؤيتها. 
 
-To see how to use me press 'How to Use' below.
+لرؤيه كيفيه الاستخدام اضغط 'كيف اكتب همسه' في الاسفل.
 
-By @StarkBots
+المطور @K_8_U
     """
 
     # Home Button
     home_buttons = [
-        [InlineKeyboardButton("🔒 Send a Whisper 🔒", switch_inline_query="")],
-        [InlineKeyboardButton(text="🏠 Return Home 🏠", callback_data="home")],
+        [InlineKeyboardButton("🔒 كتابه همسه 🔒", switch_inline_query="")],
+        [InlineKeyboardButton(text="🏠 رجوع 🏠", callback_data="home")],
     ]
     # Rest Buttons
     buttons = [
         [
-            InlineKeyboardButton("🔒 Send a Whisper 🔒", switch_inline_query="")
+            InlineKeyboardButton("🔒 كتابه همسه 🔒", switch_inline_query="")
         ],
         [
-            InlineKeyboardButton("How to Use ❔", callback_data="help"),
-            InlineKeyboardButton("🎪 About 🎪", callback_data="about")
+            InlineKeyboardButton("كيف اكتتب همسه ❔", callback_data="help"),
+            InlineKeyboardButton("🎪 حول البوت 🎪", callback_data="about")
         ],
-        [InlineKeyboardButton("♥ More Amazing bots ♥", url="https://t.me/StarkBots")],
-        [InlineKeyboardButton("🎨 Support Group 🎨", url="https://t.me/StarkBotsChat")],
+        [InlineKeyboardButton("🎨 قناة السورس 🎨", url="https://t.me/ADWSL")],
     ]
 
     # Help Message
     HELP = """
-Just type the message in below format in any chat.
+فقط اكتب الرساله كالنمط في الاسفل.
 
-`@WhisperStarkBot your_message friend_username/id`
+`@azkarkbot رسالتك + يوزر `
     """
 
     # About Message
     ABOUT = """
-**About This Bot** 
+**حول البوت** 
 
-Bot created by @StarkBots
+البوت  @azkarkbot
 
-Source Code : [Click Here](https://github.com/StarkBotsIndustries/WhisperBot)
+قناة السورس : [اضغط هنا](t.me/ADWSL)
 
-Inspired By : nnbbot
+المكتبه : [Pyrogram](docs.pyrogram.org)
 
-Framework : [Pyrogram](docs.pyrogram.org)
+لغه البرمجه : [Python](www.python.org)
 
-Language : [Python](www.python.org)
-
-Developer : @StarkProgrammer
+المطور : @K_8_U
     """
