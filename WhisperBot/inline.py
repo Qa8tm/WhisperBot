@@ -104,7 +104,7 @@ async def previous_target(sender):
 # Inline System
 @Client.on_inline_query()
 async def answer(bot: Client, query):
-    query_list = query.query.split(" ")
+    query_list = query.query.split("")
     sender = query.from_user.id
     if query.query == "":
         await query.answer(
@@ -144,7 +144,7 @@ async def answer(bot: Client, query):
                 name = target_user.first_name + target_user.last_name
             else:
                 name = target_user.first_name
-            text1 = f"هذه الهمسه الى  {name}"
+            text1 = f"هذه الهمسه الى {name}"
             text2 = f"فقط {name} يمكنه قراءتها"
             await query.answer(
                 results=[
